@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content  %}
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Game</h1>
+    <p class="lead">I need job man </p>
+</div>
+
+<div class="container">
+    <div class="d-flex flex-column">
+        <h4>Ranking:</h4>
+        {% for c in accounts %}
+            <p>{{ c.username }}</p>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="container">
+    <div class="d-flex flex-column">
+        <table>
+            <thead>
+                <tr>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in accounts %}
+                <tr>
+                    <tr>{{c.username}}</tr>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock content %}

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from account.forms import RegistrationForm, AccountAuthenticationForm, AccountUpdateForm
 
+from .models import Account
 # Create your views here.
 
 def registration_view(request):
@@ -78,3 +79,10 @@ def  account_view(request):
             )
     context['account_form'] = form
     return render(request, 'account/account.html', context)
+
+def ranking_view(request):
+    context = {}
+    accounts = Account.objects.all().order_by('username')
+    context['accounts'] = accounts
+    print(accounts)
+    return render(request, "game/ranking.html", context)  
