@@ -27,6 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' #During Development only
+
 
 # Application definition
 
@@ -34,6 +37,7 @@ INSTALLED_APPS = [
 
     # my apps
     'personal',
+    'account',
 
     # Django apps
     'django.contrib.admin',
@@ -71,6 +75,8 @@ TEMPLATES = [
         },
     },
 ]
+
+AUTH_USER_MODEL = 'account.Account'
 
 WSGI_APPLICATION = 'MySiteDjango.wsgi.application'
 
