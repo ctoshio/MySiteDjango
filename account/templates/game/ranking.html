@@ -8,30 +8,27 @@
 </div>
 
 <div class="container">
-    <div class="d-flex flex-column">
-        <h4>Ranking:</h4>
-        {% for c in accounts %}
-            <p>{{ c.username }}</p>
-        {% endfor %}
-    </div>
-</div>
-
-<div class="container">
-    <div class="d-flex flex-column">
-        <table>
-            <thead>
-                <tr>
-                    <th>Email</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for c in accounts %}
-                <tr>
-                    <tr>{{c.username}}</tr>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Ranking</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for c in accounts %}
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{c.username}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>        
     </div>
 </div>
 
