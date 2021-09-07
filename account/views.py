@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from account.forms import RegistrationForm, AccountAuthenticationForm, AccountUpdateForm
+from random import randint #randoms 
 
 from .models import Account
 # Create your views here.
@@ -80,9 +81,15 @@ def  account_view(request):
     context['account_form'] = form
     return render(request, 'account/account.html', context)
 
+def play_view(request):
+    context = {}
+    context['random_int'] = range(1000000)
+    return render(request, "game/play.html", context)  
+
+
 def ranking_view(request):
     context = {}
-    accounts = Account.objects.all().order_by('username')
+    accounts = Account.objects.all()
     context['accounts'] = accounts
     print(accounts)
     return render(request, "game/ranking.html", context)  
