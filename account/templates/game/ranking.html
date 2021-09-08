@@ -16,6 +16,7 @@
                         <tr>
                             <th>#</th>
                             <th>Ranking</th>
+                            <th>Score</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -23,6 +24,7 @@
                         <tr>
                             <td>{{forloop.counter}}</td>
                             <td>{{c.username}}</td>
+                            <td>{{c.earned_scores}}</td>
                         </tr>
                         {% endfor %}
                     </tbody>

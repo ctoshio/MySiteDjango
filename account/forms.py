@@ -50,3 +50,9 @@ class AccountUpdateForm(forms.ModelForm):
             except Account.DoesNotExist:
                 return username
             raise forms.ValidationError('Username "%s" is already in use.' % username)
+
+
+class ScoreForm(forms.ModelForm):
+    class Meta:
+        model = Account
+        fields = ('earned_scores',)

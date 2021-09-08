@@ -3,26 +3,28 @@
   "model": "account.account",
   "pk": 1,
   "fields": {
-    "password": "pbkdf2_sha256$216000$y6DNfuLdLGpE$mPDktvXcmh5QE3EU5+xW7X+nEMtCkmoksRVkGbMuQ44=",
-    "email": "admin@django.com",
-    "username": "admin",
-    "date_joined": "2021-09-05T05:08:49.842Z",
-    "last_login": "2021-09-06T05:45:07.480Z",
-    "is_admin": true,
+    "password": "pbkdf2_sha256$216000$QpPSva34jPKI$4LN6U18KKbkDRor29g64V72WR72WrdRhQOV8VLLxYSU=",
+    "email": "user@django.com",
+    "username": "user",
+    "earned_scores": 100020,
+    "date_joined": "2021-09-08T15:22:46.253Z",
+    "last_login": "2021-09-08T15:23:54.230Z",
+    "is_admin": false,
     "is_active": true,
-    "is_staff": true,
-    "is_superuser": true
+    "is_staff": false,
+    "is_superuser": false
   }
 },
 {
   "model": "account.account",
   "pk": 2,
   "fields": {
-    "password": "pbkdf2_sha256$216000$gTLww00YWsYY$M6Hux3kfNGjhPO05tA+MiZdluz/qozru7qv0TnQOIaM=",
-    "email": "user@django.com",
-    "username": "user",
-    "date_joined": "2021-09-05T05:14:10.709Z",
-    "last_login": "2021-09-06T21:31:43.325Z",
+    "password": "pbkdf2_sha256$216000$kpECwpcPdbjw$yWk98Lky2Trk4akQECEJTDTAr9BT8yVZ4jJ74D+dsw4=",
+    "email": "user2@django.com",
+    "username": "user2",
+    "earned_scores": 123000,
+    "date_joined": "2021-09-08T15:24:22.155Z",
+    "last_login": "2021-09-08T15:24:22.532Z",
     "is_admin": false,
     "is_active": true,
     "is_staff": false,
@@ -33,71 +35,12 @@
   "model": "account.account",
   "pk": 3,
   "fields": {
-    "password": "pbkdf2_sha256$216000$wYaDHMZ0FVRx$k2vrIql4NOG1NOhPBsJnJvWfXeZ9afZFQEibxRgnLxw=",
-    "email": "palomin@django.com",
-    "username": "palomin",
-    "date_joined": "2021-09-05T07:01:07.428Z",
-    "last_login": "2021-09-06T16:39:31.927Z",
-    "is_admin": false,
-    "is_active": true,
-    "is_staff": false,
-    "is_superuser": false
-  }
-},
-{
-  "model": "account.account",
-  "pk": 4,
-  "fields": {
-    "password": "pbkdf2_sha256$216000$TZFwvlElUXv6$z8NQ4++lzVNaAZXXOVzyxDGEhgDf8WBbNqhb9rBYDBk=",
-    "email": "mojon@django.com",
-    "username": "mojon1",
-    "date_joined": "2021-09-05T18:38:38.963Z",
-    "last_login": "2021-09-05T20:43:44.502Z",
-    "is_admin": false,
-    "is_active": true,
-    "is_staff": false,
-    "is_superuser": false
-  }
-},
-{
-  "model": "account.account",
-  "pk": 5,
-  "fields": {
-    "password": "pbkdf2_sha256$216000$DGf9ktA4YP3R$1ZXcuSa9qDjwPpTWtboCW0LLEFpoKcZDBU5oFpUtkQQ=",
-    "email": "test@gmail.com",
-    "username": "test",
-    "date_joined": "2021-09-06T17:05:34.374Z",
-    "last_login": "2021-09-06T18:07:50.209Z",
-    "is_admin": false,
-    "is_active": true,
-    "is_staff": false,
-    "is_superuser": false
-  }
-},
-{
-  "model": "account.account",
-  "pk": 6,
-  "fields": {
-    "password": "pbkdf2_sha256$216000$1Yfl95BTzIiO$qinBN6qFRrHiCevTdmQf9o5FAzIoZFAnE2/Bsbkuvts=",
-    "email": "juancito@django.com",
-    "username": "juancito",
-    "date_joined": "2021-09-06T21:33:45.978Z",
-    "last_login": "2021-09-06T21:33:46.455Z",
-    "is_admin": false,
-    "is_active": true,
-    "is_staff": false,
-    "is_superuser": false
-  }
-},
-{
-  "model": "account.account",
-  "pk": 7,
-  "fields": {
-    "password": "qwerty",
-    "email": "cesar@django.com",
-    "username": "cesar",
-    "date_joined": null,
-    "last_login": null,
+    "password": "pbkdf2_sha256$216000$b4ALG0aR7Kgv$sdg0e51IePXjKGd0PSGHPm7aazbEJtIxhCVdOxeXdMQ=",
+    "email": "user3@django.com",
+    "username": "user3",
+    "earned_scores": 9002,
+    "date_joined": "2021-09-08T15:24:44.009Z",
+    "last_login": "2021-09-08T15:24:44.388Z",
     "is_admin": false,
     "is_active": true,
     "is_staff": false,

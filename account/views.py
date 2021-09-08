@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
-from account.forms import RegistrationForm, AccountAuthenticationForm, AccountUpdateForm
+from account.forms import RegistrationForm, AccountAuthenticationForm, AccountUpdateForm, ScoreForm
 from random import randint #randoms 
 
 from .models import Account
@@ -82,9 +82,25 @@ def  account_view(request):
     return render(request, 'account/account.html', context)
 
 def play_view(request):
-    context = {}
-    context['random_int'] = range(1000000)
-    return render(request, "game/play.html", context)  
+
+    if request.method=="POST":
+        scores = request.POST['score']
+        print(scores)
+    return render(request, 'game/play.html')
+
+
+    #context = {}
+    #if request.POST:
+    #   formsc = ScoreForm(request.POST)
+    #   if formsc.is_valid():
+    #        formsc.save()
+    #       return('game/ranking.html')
+    #else:
+    #    formsc = ScoreForm()
+
+    #context['score_form'] = formsc
+    #return render(request, 'game/play.html', context)
+    
 
 
 def ranking_view(request):
@@ -93,3 +109,10 @@ def ranking_view(request):
     context['accounts'] = accounts
     print(accounts)
     return render(request, "game/ranking.html", context)  
+
+def home_screen_view(request):
+    context = {}
+    accounts = Account.objects.all().order_by('username')
+    context['accounts'] = accounts
+    print(accounts)
+    return render(request, "personal/home.html", context)

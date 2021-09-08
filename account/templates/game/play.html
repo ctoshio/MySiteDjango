@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+{% load static %} <!-- images -->
 <style type="text/css">
 
     .form-signin {
@@ -33,48 +33,36 @@
     
 </style>
     
-<form class="form-signin" method="post">
-    {% csrf_token %}
-    <h1 class="h3 mb-3 font-weight-normal">Play</h1>
+<form action= "play/" id= "formPlay" class="form-signin" method="post">
+  {% csrf_token %}
+  <h1 class="h3 mb-3 font-weight-normal">Play</h1>
 
-    <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus
-    value="{{account_form.initial.email}}">
-
-    <input type="text" name="username" id="inputUsername" class="form-control" placeholder="Username" required 
-    value="{{account_form.initial.username}}">
-    
-    {% for field in account_form %}
-        <p>
-          {% for error in field.errors %}
-             <p style="color: red;">{{error}}</p>
-          {% endfor %}
-        </p>
-    {% endfor %}    
+  <input type="text" name="score" id="playerscards" class="form-control" placeholder="Score" required 
+  readonly="readonly">
   
-    {% if account_form.non_field_errors %}
-        <div style="color: red;">
-          <p>{{account_form.non_field_errors}}</p>
-        </div>
-    {% endif %}
-
-    {% if success_message %}
-        <p style="color:green; text-align: center;">{{success_message}}</p>
-    {% endif %}
-
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Play</button>
+  <button id="btn1" class="btn btn-lg btn-primary btn-block" type="submit" onclick="dealcard()">Play</button>
 
 </form>
 
+<!--
+<p>{{ score_form }}</p>
 
 <form method='GET'>
-    <input id="price_to" value="{{ random_int | random }}" readonly="readonly">
-    <button type='submit' name='mybtn2' value=''> sort me</button>
+    <input id="price_to" value="0" readonly="readonly">
+    <button type='submit' name='mybtn2' value='{{ random_int | random }}'> sort me</button>
 </form>
 
 <p>{{ random_int }}</p>
 
 <p>{{ random_int | random }}</p>
 
+Player 1 cards: <input type="text" id="playerscards" readonly="readonly">
+<br />
+<button id="btn1" onclick="dealcard()">Deal</button>
+-->
+<img src="{% static 'images/yo.png' %}">
 
+<script src="{% static 'js/score.js' %}"></script>
 
 {% endblock content %}
+

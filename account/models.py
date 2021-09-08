@@ -34,6 +34,7 @@ class MyAccountManager(BaseUserManager):
 class Account(AbstractBaseUser):
     email = models.EmailField(verbose_name="email", max_length=60, unique=True)
     username = models.CharField(max_length=30, unique=True)
+    earned_scores = models.IntegerField(null=True, blank=True)
     date_joined = models.DateTimeField(verbose_name='date joined', auto_now_add=True, null=True, blank=True)
     last_login = models.DateTimeField(verbose_name='last login', auto_now_add=True, null=True, blank=True)
     is_admin = models.BooleanField(default=False)
@@ -54,5 +55,7 @@ class Account(AbstractBaseUser):
     
     def has_module_perms(self, app_label):
         return True
+
+
 
 
