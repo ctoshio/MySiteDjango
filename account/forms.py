@@ -53,6 +53,7 @@ class AccountUpdateForm(forms.ModelForm):
 
 
 class ScoreForm(forms.ModelForm):
+    earned_scores = forms.IntegerField()
     class Meta:
         model = Account
-        fields = ('earned_scores',)
+        fields = ("earned_scores",)

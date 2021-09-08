@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from account.forms import RegistrationForm, AccountAuthenticationForm, AccountUpdateForm, ScoreForm
-from random import randint #randoms 
+
 
 from .models import Account
 # Create your views here.
@@ -81,27 +81,10 @@ def  account_view(request):
     context['account_form'] = form
     return render(request, 'account/account.html', context)
 
-def play_view(request):
 
-    if request.method=="POST":
-        scores = request.POST['score']
-        print(scores)
-    return render(request, 'game/play.html')
-
-
-    #context = {}
-    #if request.POST:
-    #   formsc = ScoreForm(request.POST)
-    #   if formsc.is_valid():
-    #        formsc.save()
-    #       return('game/ranking.html')
-    #else:
-    #    formsc = ScoreForm()
-
-    #context['score_form'] = formsc
-    #return render(request, 'game/play.html', context)
-    
-
+def playing_view(request):
+    animals = ['cocodrile', 'cat', 'Dog']
+    return render(request, "game/playing.html")
 
 def ranking_view(request):
     context = {}
