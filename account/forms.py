@@ -31,7 +31,7 @@ class AccountUpdateForm(forms.ModelForm):
 
     class Meta:
         model = Account
-        fields = ('email', 'username')
+        fields = ('email', 'username', 'earned_scores')
     
     def clean_email(self):
         if self.is_valid():
@@ -51,9 +51,15 @@ class AccountUpdateForm(forms.ModelForm):
                 return username
             raise forms.ValidationError('Username "%s" is already in use.' % username)
 
+    def clean_score(self):
+        if self.is_valid():
+            earned_scores = self.cleaned_data['earned_scores']
+            try:
+                account = Account.objects.exclude(pk=self.instance.pk).get(earned_scores=earned_scores)
+            except Account.DoesNotExist:
+                return earned_scores
 
-class ScoreForm(forms.ModelForm):
-    earned_scores = forms.IntegerField()
-    class Meta:
-        model = Account
-        fields = ("earned_scores",)
+    
+
+
+
